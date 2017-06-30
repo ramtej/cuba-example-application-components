@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '6.3.0.RC1'
+    ext.cubaVersion = '6.5.5'
     repositories {
         mavenLocal()
         maven {
@@ -10,7 +10,7 @@ buildscript {
                 password(rootProject.hasProperty('repoPass') ? rootProject['repoPass'] : 'cuba123')
             }
         }
-        
+
     }
     dependencies {
         classpath "com.haulmont.gradle:cuba-plugin:$cubaVersion"
@@ -19,8 +19,8 @@ buildscript {
         classpath "com.company.platform.appointments:company-global:0.1-SNAPSHOT"
         classpath "com.company.platform.main:company-platform-global:0.1-SNAPSHOT"
 
-        
-    }
+
+    } 
 }
 
 def globalModule = project(':app-global')
@@ -69,8 +69,8 @@ configure([globalModule, coreModule, guiModule, webModule]) {
 
 configure(globalModule) {
     task enhance(type: CubaEnhancing)
-    
-    
+
+
 }
 
 configure(coreModule) {
